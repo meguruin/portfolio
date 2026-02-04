@@ -84,24 +84,49 @@
       word-break: break-word;
     }
     .award {
-      color: #e74c3c;
-      font-weight: bold;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      color: #663d00;
+      font-weight: 600;
       display: inline-block;
       margin: 4px 0;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      box-shadow: 0 2px 4px rgba(253, 160, 133, 0.3);
     }
     .card-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
       min-width: 0;
     }
     .card {
       background: #f2f6fa;
       border-radius: 10px;
-      padding: 14px 18px;
+      padding: 16px 20px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       min-width: 0;
       word-break: break-word;
+      line-height: 1.8;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 1.05em;
+      color: #222;
+      margin-bottom: 8px;
+      display: block;
+      line-height: 1.5;
+    }
+    .card-meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .card-detail {
+      color: #555;
+      font-size: 0.95em;
+      margin-top: 6px;
     }
     a {
       color: #4e8cff;
@@ -111,23 +136,47 @@
     a:hover {
       text-decoration: underline;
     }
+    a:focus {
+      outline: 2px solid #4e8cff;
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    .link-badge {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1976d2;
+      padding: 3px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin: 2px 4px 2px 0;
+    }
+    .link-badge:hover {
+      background: #4e8cff;
+      color: white;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
     @media (max-width: 600px) {
       .container {
-        padding: 8px;
-        margin: 8px;
-        width: 99vw;
+        padding: 16px;
+        margin: 12px;
+        width: calc(100vw - 24px);
       }
       .profile-header {
         flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
       }
       .profile-header img {
         width: 90px;
         height: 90px;
       }
       .card {
-        padding: 10px 8px;
+        padding: 14px 16px;
         font-size: 0.97em;
       }
       section h2 {
@@ -173,11 +222,12 @@
       <h2>Books</h2>
       <div class="card-list">
         <div class="card">
-          <b>LLMとハルシネーション 基礎と対策</b><br>
-          著者: 橘 秀幸、稲原 宗能、髙﨑 環、福地 成彦<br>
-          発行日: 2025/06/27<br>
-          発行者: オーム社<br>
-          <a href="https://www.ohmsha.co.jp/book/9784274233616/" target="_blank">https://www.ohmsha.co.jp/book/9784274233616/</a>
+          <span class="card-title">LLMとハルシネーション 基礎と対策</span>
+          <span class="card-meta">著者: 橘 秀幸、稲原 宗能、髙﨑 環、福地 成彦</span>
+          <span class="card-meta">発行日: 2025/06/27 | 発行者: オーム社</span>
+          <div style="margin-top: 8px;">
+            <a class="link-badge" href="https://www.ohmsha.co.jp/book/9784274233616/" target="_blank">詳細</a>
+          </div>
         </div>
       </div>
     </section>
@@ -186,11 +236,21 @@
       <h2>Publications (International)</h2>
       <div class="card-list">
         <div class="card">
-          <!-- 著者名は下線、タイトルは太字 -->
-          <b>Effective Dialogue-Context Retriever for Long-Term Open-Domain Conversation</b><br>
-          <u>Meguru Takasaki</u>, Naoki Yoshinaga, Masashi Toyoda<br>
-          The 13th International Workshop on Spoken Dialogue Systems Technology (IWSDS 2023) <a href="https://www.tkl.iis.u-tokyo.ac.jp/~takasa-m/iwsds2023.html">[Dataset]</a>
-          <a href="https://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/1012/IWSDS2023_takasaki_final_v4.pdf">[Paper]</a>
+          <span class="card-title">Enhancing Persuasive Dialogue Agents by Synthesizing Cross-Disciplinary Communication Strategies</span>
+          <span class="card-meta">Shinnosuke Nozue, Yuto Nakano, Yotaro Watanabe, <u>Meguru Takasaki</u>, Shoji Moriya, Reina Akama, Jun Suzuki</span>
+          <span class="card-detail">The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Industry Track)</span>
+          <div style="margin-top: 8px;">
+            <a class="link-badge" href="https://aclanthology.org/2025.emnlp-industry.158.pdf">Paper</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-title">Effective Dialogue-Context Retriever for Long-Term Open-Domain Conversation</span>
+          <span class="card-meta"><u>Meguru Takasaki</u>, Naoki Yoshinaga, Masashi Toyoda</span>
+          <span class="card-detail">The 13th International Workshop on Spoken Dialogue Systems Technology (IWSDS 2023)</span>
+          <div style="margin-top: 8px;">
+            <a class="link-badge" href="https://www.tkl.iis.u-tokyo.ac.jp/~takasa-m/iwsds2023.html">Dataset</a>
+            <a class="link-badge" href="https://www.tkl.iis.u-tokyo.ac.jp/new/uploads/publication_file/file/1012/IWSDS2023_takasaki_final_v4.pdf">Paper</a>
+          </div>
         </div>
       </div>
     </section>
@@ -199,36 +259,40 @@
       <h2>Publications (Domestic)</h2>
       <div class="card-list">
         <div class="card">
-          <b>説得エージェントの拡張戦略設計と意図変化を用いた自動評価手法の提案</b><br>
-            中野雄斗, 野末慎之介, 渡邉陽太郎, <u>髙﨑環</u>, 赤間怜奈, 鈴木潤<br>
-            2025年度人工知能学会全国大会（第39回）<br>
+          <span class="card-title">説得エージェントの拡張戦略設計と意図変化を用いた自動評価手法の提案</span>
+          <span class="card-meta">中野雄斗, 野末慎之介, 渡邉陽太郎, <u>髙﨑環</u>, 赤間怜奈, 鈴木潤</span>
+          <span class="card-detail">2025年度人工知能学会全国大会（第39回）</span>
         </div>
         <div class="card">
-          <b>情報検索に基づく応答復元とのマルチタスク学習に基づく長期間対話のための応答生成</b><br>
-          <u>髙﨑環</u>，吉永直樹，豊田正史<br>
-          人工知能学会 言語・音声理解と対話処理研究会（SLUD）第97回研究会<br>
-          口頭発表 <span class="award">🏆 人工知能学会研究会優秀賞 (JSAI SIG Research Award 2022) 受賞</span>
+          <span class="card-title">情報検索に基づく応答復元とのマルチタスク学習に基づく長期間対話のための応答生成</span>
+          <span class="card-meta"><u>髙﨑環</u>，吉永直樹，豊田正史</span>
+          <span class="card-detail">人工知能学会 言語・音声理解と対話処理研究会（SLUD）第97回研究会 | 口頭発表</span>
+          <div style="margin-top: 8px;">
+            <span class="award">🏆 人工知能学会研究会優秀賞 (JSAI SIG Research Award 2022) 受賞</span>
+          </div>
         </div>
         <div class="card">
-          <b>長期間の過去文脈を効果的に活用した雑談対話システム</b><br>
-          <u>髙﨑環</u> 吉永直樹 豊田正史<br>
-          人工知能学会 言語・音声理解と対話処理研究会（SLUD）第96回研究会「第13回対話システムシンポジウム」<br>
-          ポスター発表 <span class="award">🏆 若手優秀賞 受賞</span>
+          <span class="card-title">長期間の過去文脈を効果的に活用した雑談対話システム</span>
+          <span class="card-meta"><u>髙﨑環</u>, 吉永直樹, 豊田正史</span>
+          <span class="card-detail">人工知能学会 言語・音声理解と対話処理研究会（SLUD）第96回研究会「第13回対話システムシンポジウム」 | ポスター発表</span>
+          <div style="margin-top: 8px;">
+            <span class="award">🏆 若手優秀賞 受賞</span>
+          </div>
         </div>
         <div class="card">
-          <b>過去の対話セッションを考慮した雑談対話システム</b><br>
-          <u>髙﨑環</u>, 佐藤翔悦, 吉永直樹, 豊田正史<br>
-          言語処理学会第28回年次大会
+          <span class="card-title">過去の対話セッションを考慮した雑談対話システム</span>
+          <span class="card-meta"><u>髙﨑環</u>, 佐藤翔悦, 吉永直樹, 豊田正史</span>
+          <span class="card-detail">言語処理学会第28回年次大会</span>
         </div>
         <div class="card">
-          <b>階層型Transformerデコーダを用いた文字レベル機械翻訳</b><br>
-          <u>髙﨑環</u>, 鶴岡慶雅<br>
-          言語処理学会第27回年次大会
+          <span class="card-title">階層型Transformerデコーダを用いた文字レベル機械翻訳</span>
+          <span class="card-meta"><u>髙﨑環</u>, 鶴岡慶雅</span>
+          <span class="card-detail">言語処理学会第27回年次大会</span>
         </div>
         <div class="card">
-          <b>楽曲の歌詞をもとにした曲名生成</b><br>
-          菊地晏南, <u>髙﨑環</u>, 中本圭<br>
-          言語処理学会第26回年次大会
+          <span class="card-title">楽曲の歌詞をもとにした曲名生成</span>
+          <span class="card-meta">菊地晏南, <u>髙﨑環</u>, 中本圭</span>
+          <span class="card-detail">言語処理学会第26回年次大会</span>
         </div>
       </div>
     </section>
@@ -237,20 +301,30 @@
       <h2>Experience</h2>
       <div class="card-list">
         <div class="card">
-          2020/12-2023/3: PKSHA Technology Inc.<br>
-          <span class="subtitle">Algorithm Engineer Internship Student (NLP)</span>
+          <span class="card-title">PKSHA Technology Inc.</span>
+          <span class="card-meta">2020/12 - 2023/3</span>
+          <span class="card-detail">Algorithm Engineer Internship Student (NLP)</span>
         </div>
         <div class="card">
-          2022/3: CA Tech Challenge 広告自動生成コンペ "極" by CyberAgent, Inc.<br>
-          <span class="award">🏆 チーム1位</span>・<span class="award">🏆 個人賞 (ML/DS)</span>
+          <span class="card-title">CA Tech Challenge 広告自動生成コンペ "極"</span>
+          <span class="card-meta">2022/3 | CyberAgent, Inc.</span>
+          <div style="margin-top: 8px;">
+            <span class="award">🏆 チーム1位</span>
+            <span class="award">🏆 個人賞 (ML/DS)</span>
+          </div>
         </div>
         <div class="card">
-          2021/8-9: LINE Corporation<br>
-          <span class="subtitle">Software Engineer Internship Student (iOS) <a href="https://engineering.linecorp.com/ja/blog/internship2021-improvement-flex-message/">[Blog]</a></span>
+          <span class="card-title">LINE Corporation</span>
+          <span class="card-meta">2021/8 - 2021/9</span>
+          <span class="card-detail">Software Engineer Internship Student (iOS)</span>
+          <div style="margin-top: 8px;">
+            <a class="link-badge" href="https://engineering.linecorp.com/ja/blog/internship2021-improvement-flex-message/">Blog</a>
+          </div>
         </div>
         <div class="card">
-          2020/3-11: Crisp Inc.<br>
-          <span class="subtitle">Software Engineer Internship Student (Web, iOS)</span>
+          <span class="card-title">Crisp Inc.</span>
+          <span class="card-meta">2020/3 - 2020/11</span>
+          <span class="card-detail">Software Engineer Internship Student (Web, iOS)</span>
         </div>
       </div>
     </section>
